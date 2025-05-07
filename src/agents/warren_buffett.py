@@ -436,11 +436,15 @@ def generate_buffett_output(
     )
 
     prompt = template.invoke({"analysis_data": json.dumps(analysis_data, indent=2), "ticker": ticker})
+    prompt_text = str(prompt)
+    formatted_prompt = prompt_text.replace("\\n", "\n")
+    print(f"[warren_buffett_agent] Prompt for {ticker}:\n{formatted_prompt}\nEND")
 
     # Default fallback signal in case parsing fails
     def create_default_warren_buffett_signal():
         return WarrenBuffettSignal(signal="neutral", confidence=0.0, reasoning="Error in analysis, defaulting to neutral")
 
+    # Call the LLM with the prompt
     return call_llm(
         prompt=prompt,
         model_name=model_name,
