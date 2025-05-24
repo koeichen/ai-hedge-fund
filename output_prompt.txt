@@ -1,0 +1,1176 @@
+--- PROMPT for Agent: warren_buffett_agent at 2025-05-24 23:19:40 ---
+System: You are a Warren Buffett AI agent. Decide on investment signals based on Warren Buffett's principles:
+                - Circle of Competence: Only invest in businesses you understand
+                - Margin of Safety (> 30%): Buy at a significant discount to intrinsic value
+                - Economic Moat: Look for durable competitive advantages
+                - Quality Management: Seek conservative, shareholder-oriented teams
+                - Financial Strength: Favor low debt, strong returns on equity
+                - Long-term Horizon: Invest in businesses, not just stocks
+                - Sell only if fundamentals deteriorate or valuation far exceeds intrinsic value
+
+                When providing your reasoning, be thorough and specific by:
+                1. Explaining the key factors that influenced your decision the most (both positive and negative)
+                2. Highlighting how the company aligns with or violates specific Buffett principles
+                3. Providing quantitative evidence where relevant (e.g., specific margins, ROE values, debt levels)
+                4. Concluding with a Buffett-style assessment of the investment opportunity
+                5. Using Warren Buffett's voice and conversational style in your explanation
+
+                For example, if bullish: "I'm particularly impressed with [specific strength], reminiscent of our early investment in See's Candies where we saw [similar attribute]..."
+                For example, if bearish: "The declining returns on capital remind me of the textile operations at Berkshire that we eventually exited because..."
+
+                Follow these guidelines strictly.
+                
+Human: Based on the following data, create the investment signal as Warren Buffett would:
+
+                Analysis Data for BRK.B:
+                {
+  "BRK.B": {
+    "signal": "bearish",
+    "score": 4,
+    "max_score": 15,
+    "fundamental_analysis": {
+      "score": 2,
+      "details": "Weak ROE of 12.8%; High debt to equity ratio of 0.8; Strong operating margins; Current ratio data not available",
+      "metrics": {
+        "ticker": "BRK.B",
+        "report_period": "2025-03-31",
+        "period": "ttm",
+        "currency": "USD",
+        "market_cap": 1148869211402.0,
+        "enterprise_value": 1225902211402.0,
+        "price_to_earnings_ratio": 14.202,
+        "price_to_book_ratio": 1.755,
+        "price_to_sales_ratio": 2.763,
+        "enterprise_value_to_ebitda_ratio": 10.442,
+        "enterprise_value_to_revenue_ratio": 2.964608940374287,
+        "free_cash_flow_yield": 0.01050163054267658,
+        "peg_ratio": -1.4562416264462266,
+        "gross_margin": 0.328,
+        "operating_margin": 0.25122601779319204,
+        "net_margin": 0.195,
+        "return_on_equity": 0.128,
+        "return_on_assets": 0.071,
+        "return_on_invested_capital": 0.094,
+        "asset_turnover": 0.364,
+        "inventory_turnover": 17.299533993509197,
+        "receivables_turnover": 8.30872684398793,
+        "days_sales_outstanding": 0.12035538281338314,
+        "operating_cycle": 25.617623226320056,
+        "working_capital_turnover": null,
+        "current_ratio": null,
+        "quick_ratio": null,
+        "cash_ratio": null,
+        "operating_cash_flow_ratio": null,
+        "debt_to_equity": 0.776,
+        "debt_to_assets": 0.10813528524763596,
+        "interest_coverage": 20.31783699669325,
+        "revenue_growth": -0.019930132568971696,
+        "earnings_growth": -0.09100511264677791,
+        "book_value_growth": 0.007858410023284178,
+        "earnings_per_share_growth": -0.09752368473353226,
+        "free_cash_flow_growth": 0.03865358126721763,
+        "operating_income_growth": -0.09178332318928789,
+        "ebitda_growth": -0.0817972079928049,
+        "payout_ratio": 0.0,
+        "earnings_per_share": 60.433386569039016,
+        "book_value_per_share": 303.392,
+        "free_cash_flow_per_share": 5.593
+      }
+    },
+    "consistency_analysis": {
+      "score": 0,
+      "details": "Inconsistent earnings growth pattern; Total earnings growth of 455.4% over past 10 periods"
+    },
+    "moat_analysis": {
+      "score": 1,
+      "max_score": 3,
+      "details": "ROE not consistently above 15%; Stable operating margins above 15% (moat indicator)"
+    },
+    "management_analysis": {
+      "score": 1,
+      "max_score": 2,
+      "details": "Company has been repurchasing shares (shareholder-friendly); No significant new stock issuance detected; No or minimal dividends paid"
+    },
+    "intrinsic_value_analysis": {
+      "intrinsic_value": 1776005734053.711,
+      "owner_earnings": 107996000000.0,
+      "assumptions": {
+        "growth_rate": 0.05,
+        "discount_rate": 0.09,
+        "terminal_multiple": 12,
+        "projection_years": 10
+      },
+      "details": [
+        "Intrinsic value calculated using DCF model with owner earnings"
+      ]
+    },
+    "market_cap": 1148869211402.0,
+    "margin_of_safety": 0.545872860398441
+  }
+}
+
+                Return the trading signal in the following JSON format exactly:
+                {
+                  "signal": "bullish" | "bearish" | "neutral",
+                  "confidence": float between 0 and 100,
+                  "reasoning": "string"
+                }
+                
+--- Pydantic Model Expected: WarrenBuffettSignal ---
+--- END PROMPT for Agent: warren_buffett_agent ---
+
+--- PROMPT for Agent: warren_buffett_agent at 2025-05-24 23:23:50 (Model: o3, Provider: OpenAI) ---
+System: You are a Warren Buffett AI agent. Decide on investment signals based on Warren Buffett's principles:
+                - Circle of Competence: Only invest in businesses you understand
+                - Margin of Safety (> 30%): Buy at a significant discount to intrinsic value
+                - Economic Moat: Look for durable competitive advantages
+                - Quality Management: Seek conservative, shareholder-oriented teams
+                - Financial Strength: Favor low debt, strong returns on equity
+                - Long-term Horizon: Invest in businesses, not just stocks
+                - Sell only if fundamentals deteriorate or valuation far exceeds intrinsic value
+
+                When providing your reasoning, be thorough and specific by:
+                1. Explaining the key factors that influenced your decision the most (both positive and negative)
+                2. Highlighting how the company aligns with or violates specific Buffett principles
+                3. Providing quantitative evidence where relevant (e.g., specific margins, ROE values, debt levels)
+                4. Concluding with a Buffett-style assessment of the investment opportunity
+                5. Using Warren Buffett's voice and conversational style in your explanation
+
+                For example, if bullish: "I'm particularly impressed with [specific strength], reminiscent of our early investment in See's Candies where we saw [similar attribute]..."
+                For example, if bearish: "The declining returns on capital remind me of the textile operations at Berkshire that we eventually exited because..."
+
+                Follow these guidelines strictly.
+                
+Human: Based on the following data, create the investment signal as Warren Buffett would:
+
+                Analysis Data for BRK.B:
+                {
+  "BRK.B": {
+    "signal": "bearish",
+    "score": 4,
+    "max_score": 15,
+    "fundamental_analysis": {
+      "score": 2,
+      "details": "Weak ROE of 12.8%; High debt to equity ratio of 0.8; Strong operating margins; Current ratio data not available",
+      "metrics": {
+        "ticker": "BRK.B",
+        "report_period": "2025-03-31",
+        "period": "ttm",
+        "currency": "USD",
+        "market_cap": 1148869211402.0,
+        "enterprise_value": 1225902211402.0,
+        "price_to_earnings_ratio": 14.202,
+        "price_to_book_ratio": 1.755,
+        "price_to_sales_ratio": 2.763,
+        "enterprise_value_to_ebitda_ratio": 10.442,
+        "enterprise_value_to_revenue_ratio": 2.964608940374287,
+        "free_cash_flow_yield": 0.01050163054267658,
+        "peg_ratio": -1.4562416264462266,
+        "gross_margin": 0.328,
+        "operating_margin": 0.25122601779319204,
+        "net_margin": 0.195,
+        "return_on_equity": 0.128,
+        "return_on_assets": 0.071,
+        "return_on_invested_capital": 0.094,
+        "asset_turnover": 0.364,
+        "inventory_turnover": 17.299533993509197,
+        "receivables_turnover": 8.30872684398793,
+        "days_sales_outstanding": 0.12035538281338314,
+        "operating_cycle": 25.617623226320056,
+        "working_capital_turnover": null,
+        "current_ratio": null,
+        "quick_ratio": null,
+        "cash_ratio": null,
+        "operating_cash_flow_ratio": null,
+        "debt_to_equity": 0.776,
+        "debt_to_assets": 0.10813528524763596,
+        "interest_coverage": 20.31783699669325,
+        "revenue_growth": -0.019930132568971696,
+        "earnings_growth": -0.09100511264677791,
+        "book_value_growth": 0.007858410023284178,
+        "earnings_per_share_growth": -0.09752368473353226,
+        "free_cash_flow_growth": 0.03865358126721763,
+        "operating_income_growth": -0.09178332318928789,
+        "ebitda_growth": -0.0817972079928049,
+        "payout_ratio": 0.0,
+        "earnings_per_share": 60.433386569039016,
+        "book_value_per_share": 303.392,
+        "free_cash_flow_per_share": 5.593
+      }
+    },
+    "consistency_analysis": {
+      "score": 0,
+      "details": "Inconsistent earnings growth pattern; Total earnings growth of 455.4% over past 10 periods"
+    },
+    "moat_analysis": {
+      "score": 1,
+      "max_score": 3,
+      "details": "ROE not consistently above 15%; Stable operating margins above 15% (moat indicator)"
+    },
+    "management_analysis": {
+      "score": 1,
+      "max_score": 2,
+      "details": "Company has been repurchasing shares (shareholder-friendly); No significant new stock issuance detected; No or minimal dividends paid"
+    },
+    "intrinsic_value_analysis": {
+      "intrinsic_value": 1776005734053.711,
+      "owner_earnings": 107996000000.0,
+      "assumptions": {
+        "growth_rate": 0.05,
+        "discount_rate": 0.09,
+        "terminal_multiple": 12,
+        "projection_years": 10
+      },
+      "details": [
+        "Intrinsic value calculated using DCF model with owner earnings"
+      ]
+    },
+    "market_cap": 1148869211402.0,
+    "margin_of_safety": 0.545872860398441
+  }
+}
+
+                Return the trading signal in the following JSON format exactly:
+                {
+                  "signal": "bullish" | "bearish" | "neutral",
+                  "confidence": float between 0 and 100,
+                  "reasoning": "string"
+                }
+                
+--- Pydantic Model Expected: WarrenBuffettSignal ---
+--- END PROMPT for Agent: warren_buffett_agent ---
+
+--- PROMPT for Agent: portfolio_manager at 2025-05-24 23:23:50 (Model: o3, Provider: OpenAI) ---
+System: You are a portfolio manager making final trading decisions based on multiple tickers.
+
+              Trading Rules:
+              - For long positions:
+                * Only buy if you have available cash
+                * Only sell if you currently hold long shares of that ticker
+                * Sell quantity must be ≤ current long position shares
+                * Buy quantity must be ≤ max_shares for that ticker
+              
+              - For short positions:
+                * Only short if you have available margin (position value × margin requirement)
+                * Only cover if you currently have short shares of that ticker
+                * Cover quantity must be ≤ current short position shares
+                * Short quantity must respect margin requirements
+              
+              - The max_shares values are pre-calculated to respect position limits
+              - Consider both long and short opportunities based on signals
+              - Maintain appropriate risk management with both long and short exposure
+
+              Available Actions:
+              - "buy": Open or add to long position
+              - "sell": Close or reduce long position
+              - "short": Open or add to short position
+              - "cover": Close or reduce short position
+              - "hold": No action
+
+              Inputs:
+              - signals_by_ticker: dictionary of ticker → signals
+              - max_shares: maximum shares allowed per ticker
+              - portfolio_cash: current cash in portfolio
+              - portfolio_positions: current positions (both long and short)
+              - current_prices: current prices for each ticker
+              - margin_requirement: current margin requirement for short positions (e.g., 0.5 means 50%)
+              - total_margin_used: total margin currently in use
+              
+Human: Based on the team's analysis, make your trading decisions for each ticker.
+
+              Here are the signals by ticker:
+              {
+  "BRK.B": {
+    "warren_buffett_agent": {
+      "signal": "neutral",
+      "confidence": 0.0
+    }
+  }
+}
+
+              Current Prices:
+              {
+  "BRK.B": 512.39
+}
+
+              Maximum Shares Allowed For Purchases:
+              {
+  "BRK.B": 39
+}
+
+              Portfolio Cash: 100000.00
+              Current Positions: {
+  "BRK.B": {
+    "long": 0,
+    "short": 0,
+    "long_cost_basis": 0.0,
+    "short_cost_basis": 0.0,
+    "short_margin_used": 0.0
+  }
+}
+              Current Margin Requirement: 0.00
+              Total Margin Used: 0.00
+
+              Output strictly in JSON with the following structure:
+              {
+                "decisions": {
+                  "TICKER1": {
+                    "action": "buy/sell/short/cover/hold",
+                    "quantity": integer,
+                    "confidence": float between 0 and 100,
+                    "reasoning": "string"
+                  },
+                  "TICKER2": {
+                    ...
+                  },
+                  ...
+                }
+              }
+              
+--- Pydantic Model Expected: PortfolioManagerOutput ---
+--- END PROMPT for Agent: portfolio_manager ---
+
+--- PROMPT for Agent: warren_buffett_agent at 2025-05-24 23:23:51 (Model: o3, Provider: OpenAI) ---
+System: You are a Warren Buffett AI agent. Decide on investment signals based on Warren Buffett's principles:
+                - Circle of Competence: Only invest in businesses you understand
+                - Margin of Safety (> 30%): Buy at a significant discount to intrinsic value
+                - Economic Moat: Look for durable competitive advantages
+                - Quality Management: Seek conservative, shareholder-oriented teams
+                - Financial Strength: Favor low debt, strong returns on equity
+                - Long-term Horizon: Invest in businesses, not just stocks
+                - Sell only if fundamentals deteriorate or valuation far exceeds intrinsic value
+
+                When providing your reasoning, be thorough and specific by:
+                1. Explaining the key factors that influenced your decision the most (both positive and negative)
+                2. Highlighting how the company aligns with or violates specific Buffett principles
+                3. Providing quantitative evidence where relevant (e.g., specific margins, ROE values, debt levels)
+                4. Concluding with a Buffett-style assessment of the investment opportunity
+                5. Using Warren Buffett's voice and conversational style in your explanation
+
+                For example, if bullish: "I'm particularly impressed with [specific strength], reminiscent of our early investment in See's Candies where we saw [similar attribute]..."
+                For example, if bearish: "The declining returns on capital remind me of the textile operations at Berkshire that we eventually exited because..."
+
+                Follow these guidelines strictly.
+                
+Human: Based on the following data, create the investment signal as Warren Buffett would:
+
+                Analysis Data for BRK.B:
+                {
+  "BRK.B": {
+    "signal": "bearish",
+    "score": 4,
+    "max_score": 15,
+    "fundamental_analysis": {
+      "score": 2,
+      "details": "Weak ROE of 12.8%; High debt to equity ratio of 0.8; Strong operating margins; Current ratio data not available",
+      "metrics": {
+        "ticker": "BRK.B",
+        "report_period": "2025-03-31",
+        "period": "ttm",
+        "currency": "USD",
+        "market_cap": 1148869211402.0,
+        "enterprise_value": 1225902211402.0,
+        "price_to_earnings_ratio": 14.202,
+        "price_to_book_ratio": 1.755,
+        "price_to_sales_ratio": 2.763,
+        "enterprise_value_to_ebitda_ratio": 10.442,
+        "enterprise_value_to_revenue_ratio": 2.964608940374287,
+        "free_cash_flow_yield": 0.01050163054267658,
+        "peg_ratio": -1.4562416264462266,
+        "gross_margin": 0.328,
+        "operating_margin": 0.25122601779319204,
+        "net_margin": 0.195,
+        "return_on_equity": 0.128,
+        "return_on_assets": 0.071,
+        "return_on_invested_capital": 0.094,
+        "asset_turnover": 0.364,
+        "inventory_turnover": 17.299533993509197,
+        "receivables_turnover": 8.30872684398793,
+        "days_sales_outstanding": 0.12035538281338314,
+        "operating_cycle": 25.617623226320056,
+        "working_capital_turnover": null,
+        "current_ratio": null,
+        "quick_ratio": null,
+        "cash_ratio": null,
+        "operating_cash_flow_ratio": null,
+        "debt_to_equity": 0.776,
+        "debt_to_assets": 0.10813528524763596,
+        "interest_coverage": 20.31783699669325,
+        "revenue_growth": -0.019930132568971696,
+        "earnings_growth": -0.09100511264677791,
+        "book_value_growth": 0.007858410023284178,
+        "earnings_per_share_growth": -0.09752368473353226,
+        "free_cash_flow_growth": 0.03865358126721763,
+        "operating_income_growth": -0.09178332318928789,
+        "ebitda_growth": -0.0817972079928049,
+        "payout_ratio": 0.0,
+        "earnings_per_share": 60.433386569039016,
+        "book_value_per_share": 303.392,
+        "free_cash_flow_per_share": 5.593
+      }
+    },
+    "consistency_analysis": {
+      "score": 0,
+      "details": "Inconsistent earnings growth pattern; Total earnings growth of 455.4% over past 10 periods"
+    },
+    "moat_analysis": {
+      "score": 1,
+      "max_score": 3,
+      "details": "ROE not consistently above 15%; Stable operating margins above 15% (moat indicator)"
+    },
+    "management_analysis": {
+      "score": 1,
+      "max_score": 2,
+      "details": "Company has been repurchasing shares (shareholder-friendly); No significant new stock issuance detected; No or minimal dividends paid"
+    },
+    "intrinsic_value_analysis": {
+      "intrinsic_value": 1776005734053.711,
+      "owner_earnings": 107996000000.0,
+      "assumptions": {
+        "growth_rate": 0.05,
+        "discount_rate": 0.09,
+        "terminal_multiple": 12,
+        "projection_years": 10
+      },
+      "details": [
+        "Intrinsic value calculated using DCF model with owner earnings"
+      ]
+    },
+    "market_cap": 1148869211402.0,
+    "margin_of_safety": 0.545872860398441
+  }
+}
+
+                Return the trading signal in the following JSON format exactly:
+                {
+                  "signal": "bullish" | "bearish" | "neutral",
+                  "confidence": float between 0 and 100,
+                  "reasoning": "string"
+                }
+                
+--- Pydantic Model Expected: WarrenBuffettSignal ---
+--- END PROMPT for Agent: warren_buffett_agent ---
+
+--- PROMPT for Agent: portfolio_manager at 2025-05-24 23:23:52 (Model: o3, Provider: OpenAI) ---
+System: You are a portfolio manager making final trading decisions based on multiple tickers.
+
+              Trading Rules:
+              - For long positions:
+                * Only buy if you have available cash
+                * Only sell if you currently hold long shares of that ticker
+                * Sell quantity must be ≤ current long position shares
+                * Buy quantity must be ≤ max_shares for that ticker
+              
+              - For short positions:
+                * Only short if you have available margin (position value × margin requirement)
+                * Only cover if you currently have short shares of that ticker
+                * Cover quantity must be ≤ current short position shares
+                * Short quantity must respect margin requirements
+              
+              - The max_shares values are pre-calculated to respect position limits
+              - Consider both long and short opportunities based on signals
+              - Maintain appropriate risk management with both long and short exposure
+
+              Available Actions:
+              - "buy": Open or add to long position
+              - "sell": Close or reduce long position
+              - "short": Open or add to short position
+              - "cover": Close or reduce short position
+              - "hold": No action
+
+              Inputs:
+              - signals_by_ticker: dictionary of ticker → signals
+              - max_shares: maximum shares allowed per ticker
+              - portfolio_cash: current cash in portfolio
+              - portfolio_positions: current positions (both long and short)
+              - current_prices: current prices for each ticker
+              - margin_requirement: current margin requirement for short positions (e.g., 0.5 means 50%)
+              - total_margin_used: total margin currently in use
+              
+Human: Based on the team's analysis, make your trading decisions for each ticker.
+
+              Here are the signals by ticker:
+              {
+  "BRK.B": {
+    "warren_buffett_agent": {
+      "signal": "neutral",
+      "confidence": 0.0
+    }
+  }
+}
+
+              Current Prices:
+              {
+  "BRK.B": 508.74
+}
+
+              Maximum Shares Allowed For Purchases:
+              {
+  "BRK.B": 39
+}
+
+              Portfolio Cash: 100000.00
+              Current Positions: {
+  "BRK.B": {
+    "long": 0,
+    "short": 0,
+    "long_cost_basis": 0.0,
+    "short_cost_basis": 0.0,
+    "short_margin_used": 0.0
+  }
+}
+              Current Margin Requirement: 0.00
+              Total Margin Used: 0.00
+
+              Output strictly in JSON with the following structure:
+              {
+                "decisions": {
+                  "TICKER1": {
+                    "action": "buy/sell/short/cover/hold",
+                    "quantity": integer,
+                    "confidence": float between 0 and 100,
+                    "reasoning": "string"
+                  },
+                  "TICKER2": {
+                    ...
+                  },
+                  ...
+                }
+              }
+              
+--- Pydantic Model Expected: PortfolioManagerOutput ---
+--- END PROMPT for Agent: portfolio_manager ---
+
+--- PROMPT for Agent: warren_buffett_agent at 2025-05-24 23:23:53 (Model: o3, Provider: OpenAI) ---
+System: You are a Warren Buffett AI agent. Decide on investment signals based on Warren Buffett's principles:
+                - Circle of Competence: Only invest in businesses you understand
+                - Margin of Safety (> 30%): Buy at a significant discount to intrinsic value
+                - Economic Moat: Look for durable competitive advantages
+                - Quality Management: Seek conservative, shareholder-oriented teams
+                - Financial Strength: Favor low debt, strong returns on equity
+                - Long-term Horizon: Invest in businesses, not just stocks
+                - Sell only if fundamentals deteriorate or valuation far exceeds intrinsic value
+
+                When providing your reasoning, be thorough and specific by:
+                1. Explaining the key factors that influenced your decision the most (both positive and negative)
+                2. Highlighting how the company aligns with or violates specific Buffett principles
+                3. Providing quantitative evidence where relevant (e.g., specific margins, ROE values, debt levels)
+                4. Concluding with a Buffett-style assessment of the investment opportunity
+                5. Using Warren Buffett's voice and conversational style in your explanation
+
+                For example, if bullish: "I'm particularly impressed with [specific strength], reminiscent of our early investment in See's Candies where we saw [similar attribute]..."
+                For example, if bearish: "The declining returns on capital remind me of the textile operations at Berkshire that we eventually exited because..."
+
+                Follow these guidelines strictly.
+                
+Human: Based on the following data, create the investment signal as Warren Buffett would:
+
+                Analysis Data for BRK.B:
+                {
+  "BRK.B": {
+    "signal": "bearish",
+    "score": 4,
+    "max_score": 15,
+    "fundamental_analysis": {
+      "score": 2,
+      "details": "Weak ROE of 12.8%; High debt to equity ratio of 0.8; Strong operating margins; Current ratio data not available",
+      "metrics": {
+        "ticker": "BRK.B",
+        "report_period": "2025-03-31",
+        "period": "ttm",
+        "currency": "USD",
+        "market_cap": 1148869211402.0,
+        "enterprise_value": 1225902211402.0,
+        "price_to_earnings_ratio": 14.202,
+        "price_to_book_ratio": 1.755,
+        "price_to_sales_ratio": 2.763,
+        "enterprise_value_to_ebitda_ratio": 10.442,
+        "enterprise_value_to_revenue_ratio": 2.964608940374287,
+        "free_cash_flow_yield": 0.01050163054267658,
+        "peg_ratio": -1.4562416264462266,
+        "gross_margin": 0.328,
+        "operating_margin": 0.25122601779319204,
+        "net_margin": 0.195,
+        "return_on_equity": 0.128,
+        "return_on_assets": 0.071,
+        "return_on_invested_capital": 0.094,
+        "asset_turnover": 0.364,
+        "inventory_turnover": 17.299533993509197,
+        "receivables_turnover": 8.30872684398793,
+        "days_sales_outstanding": 0.12035538281338314,
+        "operating_cycle": 25.617623226320056,
+        "working_capital_turnover": null,
+        "current_ratio": null,
+        "quick_ratio": null,
+        "cash_ratio": null,
+        "operating_cash_flow_ratio": null,
+        "debt_to_equity": 0.776,
+        "debt_to_assets": 0.10813528524763596,
+        "interest_coverage": 20.31783699669325,
+        "revenue_growth": -0.019930132568971696,
+        "earnings_growth": -0.09100511264677791,
+        "book_value_growth": 0.007858410023284178,
+        "earnings_per_share_growth": -0.09752368473353226,
+        "free_cash_flow_growth": 0.03865358126721763,
+        "operating_income_growth": -0.09178332318928789,
+        "ebitda_growth": -0.0817972079928049,
+        "payout_ratio": 0.0,
+        "earnings_per_share": 60.433386569039016,
+        "book_value_per_share": 303.392,
+        "free_cash_flow_per_share": 5.593
+      }
+    },
+    "consistency_analysis": {
+      "score": 0,
+      "details": "Inconsistent earnings growth pattern; Total earnings growth of 455.4% over past 10 periods"
+    },
+    "moat_analysis": {
+      "score": 1,
+      "max_score": 3,
+      "details": "ROE not consistently above 15%; Stable operating margins above 15% (moat indicator)"
+    },
+    "management_analysis": {
+      "score": 1,
+      "max_score": 2,
+      "details": "Company has been repurchasing shares (shareholder-friendly); No significant new stock issuance detected; No or minimal dividends paid"
+    },
+    "intrinsic_value_analysis": {
+      "intrinsic_value": 1776005734053.711,
+      "owner_earnings": 107996000000.0,
+      "assumptions": {
+        "growth_rate": 0.05,
+        "discount_rate": 0.09,
+        "terminal_multiple": 12,
+        "projection_years": 10
+      },
+      "details": [
+        "Intrinsic value calculated using DCF model with owner earnings"
+      ]
+    },
+    "market_cap": 1148869211402.0,
+    "margin_of_safety": 0.545872860398441
+  }
+}
+
+                Return the trading signal in the following JSON format exactly:
+                {
+                  "signal": "bullish" | "bearish" | "neutral",
+                  "confidence": float between 0 and 100,
+                  "reasoning": "string"
+                }
+                
+--- Pydantic Model Expected: WarrenBuffettSignal ---
+--- END PROMPT for Agent: warren_buffett_agent ---
+
+--- PROMPT for Agent: portfolio_manager at 2025-05-24 23:23:53 (Model: o3, Provider: OpenAI) ---
+System: You are a portfolio manager making final trading decisions based on multiple tickers.
+
+              Trading Rules:
+              - For long positions:
+                * Only buy if you have available cash
+                * Only sell if you currently hold long shares of that ticker
+                * Sell quantity must be ≤ current long position shares
+                * Buy quantity must be ≤ max_shares for that ticker
+              
+              - For short positions:
+                * Only short if you have available margin (position value × margin requirement)
+                * Only cover if you currently have short shares of that ticker
+                * Cover quantity must be ≤ current short position shares
+                * Short quantity must respect margin requirements
+              
+              - The max_shares values are pre-calculated to respect position limits
+              - Consider both long and short opportunities based on signals
+              - Maintain appropriate risk management with both long and short exposure
+
+              Available Actions:
+              - "buy": Open or add to long position
+              - "sell": Close or reduce long position
+              - "short": Open or add to short position
+              - "cover": Close or reduce short position
+              - "hold": No action
+
+              Inputs:
+              - signals_by_ticker: dictionary of ticker → signals
+              - max_shares: maximum shares allowed per ticker
+              - portfolio_cash: current cash in portfolio
+              - portfolio_positions: current positions (both long and short)
+              - current_prices: current prices for each ticker
+              - margin_requirement: current margin requirement for short positions (e.g., 0.5 means 50%)
+              - total_margin_used: total margin currently in use
+              
+Human: Based on the team's analysis, make your trading decisions for each ticker.
+
+              Here are the signals by ticker:
+              {
+  "BRK.B": {
+    "warren_buffett_agent": {
+      "signal": "neutral",
+      "confidence": 0.0
+    }
+  }
+}
+
+              Current Prices:
+              {
+  "BRK.B": 507.03
+}
+
+              Maximum Shares Allowed For Purchases:
+              {
+  "BRK.B": 39
+}
+
+              Portfolio Cash: 100000.00
+              Current Positions: {
+  "BRK.B": {
+    "long": 0,
+    "short": 0,
+    "long_cost_basis": 0.0,
+    "short_cost_basis": 0.0,
+    "short_margin_used": 0.0
+  }
+}
+              Current Margin Requirement: 0.00
+              Total Margin Used: 0.00
+
+              Output strictly in JSON with the following structure:
+              {
+                "decisions": {
+                  "TICKER1": {
+                    "action": "buy/sell/short/cover/hold",
+                    "quantity": integer,
+                    "confidence": float between 0 and 100,
+                    "reasoning": "string"
+                  },
+                  "TICKER2": {
+                    ...
+                  },
+                  ...
+                }
+              }
+              
+--- Pydantic Model Expected: PortfolioManagerOutput ---
+--- END PROMPT for Agent: portfolio_manager ---
+
+--- PROMPT for Agent: warren_buffett_agent at 2025-05-24 23:23:54 (Model: o3, Provider: OpenAI) ---
+System: You are a Warren Buffett AI agent. Decide on investment signals based on Warren Buffett's principles:
+                - Circle of Competence: Only invest in businesses you understand
+                - Margin of Safety (> 30%): Buy at a significant discount to intrinsic value
+                - Economic Moat: Look for durable competitive advantages
+                - Quality Management: Seek conservative, shareholder-oriented teams
+                - Financial Strength: Favor low debt, strong returns on equity
+                - Long-term Horizon: Invest in businesses, not just stocks
+                - Sell only if fundamentals deteriorate or valuation far exceeds intrinsic value
+
+                When providing your reasoning, be thorough and specific by:
+                1. Explaining the key factors that influenced your decision the most (both positive and negative)
+                2. Highlighting how the company aligns with or violates specific Buffett principles
+                3. Providing quantitative evidence where relevant (e.g., specific margins, ROE values, debt levels)
+                4. Concluding with a Buffett-style assessment of the investment opportunity
+                5. Using Warren Buffett's voice and conversational style in your explanation
+
+                For example, if bullish: "I'm particularly impressed with [specific strength], reminiscent of our early investment in See's Candies where we saw [similar attribute]..."
+                For example, if bearish: "The declining returns on capital remind me of the textile operations at Berkshire that we eventually exited because..."
+
+                Follow these guidelines strictly.
+                
+Human: Based on the following data, create the investment signal as Warren Buffett would:
+
+                Analysis Data for BRK.B:
+                {
+  "BRK.B": {
+    "signal": "bearish",
+    "score": 4,
+    "max_score": 15,
+    "fundamental_analysis": {
+      "score": 2,
+      "details": "Weak ROE of 12.8%; High debt to equity ratio of 0.8; Strong operating margins; Current ratio data not available",
+      "metrics": {
+        "ticker": "BRK.B",
+        "report_period": "2025-03-31",
+        "period": "ttm",
+        "currency": "USD",
+        "market_cap": 1148869211402.0,
+        "enterprise_value": 1225902211402.0,
+        "price_to_earnings_ratio": 14.202,
+        "price_to_book_ratio": 1.755,
+        "price_to_sales_ratio": 2.763,
+        "enterprise_value_to_ebitda_ratio": 10.442,
+        "enterprise_value_to_revenue_ratio": 2.964608940374287,
+        "free_cash_flow_yield": 0.01050163054267658,
+        "peg_ratio": -1.4562416264462266,
+        "gross_margin": 0.328,
+        "operating_margin": 0.25122601779319204,
+        "net_margin": 0.195,
+        "return_on_equity": 0.128,
+        "return_on_assets": 0.071,
+        "return_on_invested_capital": 0.094,
+        "asset_turnover": 0.364,
+        "inventory_turnover": 17.299533993509197,
+        "receivables_turnover": 8.30872684398793,
+        "days_sales_outstanding": 0.12035538281338314,
+        "operating_cycle": 25.617623226320056,
+        "working_capital_turnover": null,
+        "current_ratio": null,
+        "quick_ratio": null,
+        "cash_ratio": null,
+        "operating_cash_flow_ratio": null,
+        "debt_to_equity": 0.776,
+        "debt_to_assets": 0.10813528524763596,
+        "interest_coverage": 20.31783699669325,
+        "revenue_growth": -0.019930132568971696,
+        "earnings_growth": -0.09100511264677791,
+        "book_value_growth": 0.007858410023284178,
+        "earnings_per_share_growth": -0.09752368473353226,
+        "free_cash_flow_growth": 0.03865358126721763,
+        "operating_income_growth": -0.09178332318928789,
+        "ebitda_growth": -0.0817972079928049,
+        "payout_ratio": 0.0,
+        "earnings_per_share": 60.433386569039016,
+        "book_value_per_share": 303.392,
+        "free_cash_flow_per_share": 5.593
+      }
+    },
+    "consistency_analysis": {
+      "score": 0,
+      "details": "Inconsistent earnings growth pattern; Total earnings growth of 455.4% over past 10 periods"
+    },
+    "moat_analysis": {
+      "score": 1,
+      "max_score": 3,
+      "details": "ROE not consistently above 15%; Stable operating margins above 15% (moat indicator)"
+    },
+    "management_analysis": {
+      "score": 1,
+      "max_score": 2,
+      "details": "Company has been repurchasing shares (shareholder-friendly); No significant new stock issuance detected; No or minimal dividends paid"
+    },
+    "intrinsic_value_analysis": {
+      "intrinsic_value": 1776005734053.711,
+      "owner_earnings": 107996000000.0,
+      "assumptions": {
+        "growth_rate": 0.05,
+        "discount_rate": 0.09,
+        "terminal_multiple": 12,
+        "projection_years": 10
+      },
+      "details": [
+        "Intrinsic value calculated using DCF model with owner earnings"
+      ]
+    },
+    "market_cap": 1148869211402.0,
+    "margin_of_safety": 0.545872860398441
+  }
+}
+
+                Return the trading signal in the following JSON format exactly:
+                {
+                  "signal": "bullish" | "bearish" | "neutral",
+                  "confidence": float between 0 and 100,
+                  "reasoning": "string"
+                }
+                
+--- Pydantic Model Expected: WarrenBuffettSignal ---
+--- END PROMPT for Agent: warren_buffett_agent ---
+
+--- PROMPT for Agent: portfolio_manager at 2025-05-24 23:23:55 (Model: o3, Provider: OpenAI) ---
+System: You are a portfolio manager making final trading decisions based on multiple tickers.
+
+              Trading Rules:
+              - For long positions:
+                * Only buy if you have available cash
+                * Only sell if you currently hold long shares of that ticker
+                * Sell quantity must be ≤ current long position shares
+                * Buy quantity must be ≤ max_shares for that ticker
+              
+              - For short positions:
+                * Only short if you have available margin (position value × margin requirement)
+                * Only cover if you currently have short shares of that ticker
+                * Cover quantity must be ≤ current short position shares
+                * Short quantity must respect margin requirements
+              
+              - The max_shares values are pre-calculated to respect position limits
+              - Consider both long and short opportunities based on signals
+              - Maintain appropriate risk management with both long and short exposure
+
+              Available Actions:
+              - "buy": Open or add to long position
+              - "sell": Close or reduce long position
+              - "short": Open or add to short position
+              - "cover": Close or reduce short position
+              - "hold": No action
+
+              Inputs:
+              - signals_by_ticker: dictionary of ticker → signals
+              - max_shares: maximum shares allowed per ticker
+              - portfolio_cash: current cash in portfolio
+              - portfolio_positions: current positions (both long and short)
+              - current_prices: current prices for each ticker
+              - margin_requirement: current margin requirement for short positions (e.g., 0.5 means 50%)
+              - total_margin_used: total margin currently in use
+              
+Human: Based on the team's analysis, make your trading decisions for each ticker.
+
+              Here are the signals by ticker:
+              {
+  "BRK.B": {
+    "warren_buffett_agent": {
+      "signal": "neutral",
+      "confidence": 0.0
+    }
+  }
+}
+
+              Current Prices:
+              {
+  "BRK.B": 503.57
+}
+
+              Maximum Shares Allowed For Purchases:
+              {
+  "BRK.B": 39
+}
+
+              Portfolio Cash: 100000.00
+              Current Positions: {
+  "BRK.B": {
+    "long": 0,
+    "short": 0,
+    "long_cost_basis": 0.0,
+    "short_cost_basis": 0.0,
+    "short_margin_used": 0.0
+  }
+}
+              Current Margin Requirement: 0.00
+              Total Margin Used: 0.00
+
+              Output strictly in JSON with the following structure:
+              {
+                "decisions": {
+                  "TICKER1": {
+                    "action": "buy/sell/short/cover/hold",
+                    "quantity": integer,
+                    "confidence": float between 0 and 100,
+                    "reasoning": "string"
+                  },
+                  "TICKER2": {
+                    ...
+                  },
+                  ...
+                }
+              }
+              
+--- Pydantic Model Expected: PortfolioManagerOutput ---
+--- END PROMPT for Agent: portfolio_manager ---
+
+--- PROMPT for Agent: warren_buffett_agent at 2025-05-24 23:23:56 (Model: o3, Provider: OpenAI) ---
+System: You are a Warren Buffett AI agent. Decide on investment signals based on Warren Buffett's principles:
+                - Circle of Competence: Only invest in businesses you understand
+                - Margin of Safety (> 30%): Buy at a significant discount to intrinsic value
+                - Economic Moat: Look for durable competitive advantages
+                - Quality Management: Seek conservative, shareholder-oriented teams
+                - Financial Strength: Favor low debt, strong returns on equity
+                - Long-term Horizon: Invest in businesses, not just stocks
+                - Sell only if fundamentals deteriorate or valuation far exceeds intrinsic value
+
+                When providing your reasoning, be thorough and specific by:
+                1. Explaining the key factors that influenced your decision the most (both positive and negative)
+                2. Highlighting how the company aligns with or violates specific Buffett principles
+                3. Providing quantitative evidence where relevant (e.g., specific margins, ROE values, debt levels)
+                4. Concluding with a Buffett-style assessment of the investment opportunity
+                5. Using Warren Buffett's voice and conversational style in your explanation
+
+                For example, if bullish: "I'm particularly impressed with [specific strength], reminiscent of our early investment in See's Candies where we saw [similar attribute]..."
+                For example, if bearish: "The declining returns on capital remind me of the textile operations at Berkshire that we eventually exited because..."
+
+                Follow these guidelines strictly.
+                
+Human: Based on the following data, create the investment signal as Warren Buffett would:
+
+                Analysis Data for BRK.B:
+                {
+  "BRK.B": {
+    "signal": "bearish",
+    "score": 4,
+    "max_score": 15,
+    "fundamental_analysis": {
+      "score": 2,
+      "details": "Weak ROE of 12.8%; High debt to equity ratio of 0.8; Strong operating margins; Current ratio data not available",
+      "metrics": {
+        "ticker": "BRK.B",
+        "report_period": "2025-03-31",
+        "period": "ttm",
+        "currency": "USD",
+        "market_cap": 1148869211402.0,
+        "enterprise_value": 1225902211402.0,
+        "price_to_earnings_ratio": 14.202,
+        "price_to_book_ratio": 1.755,
+        "price_to_sales_ratio": 2.763,
+        "enterprise_value_to_ebitda_ratio": 10.442,
+        "enterprise_value_to_revenue_ratio": 2.964608940374287,
+        "free_cash_flow_yield": 0.01050163054267658,
+        "peg_ratio": -1.4562416264462266,
+        "gross_margin": 0.328,
+        "operating_margin": 0.25122601779319204,
+        "net_margin": 0.195,
+        "return_on_equity": 0.128,
+        "return_on_assets": 0.071,
+        "return_on_invested_capital": 0.094,
+        "asset_turnover": 0.364,
+        "inventory_turnover": 17.299533993509197,
+        "receivables_turnover": 8.30872684398793,
+        "days_sales_outstanding": 0.12035538281338314,
+        "operating_cycle": 25.617623226320056,
+        "working_capital_turnover": null,
+        "current_ratio": null,
+        "quick_ratio": null,
+        "cash_ratio": null,
+        "operating_cash_flow_ratio": null,
+        "debt_to_equity": 0.776,
+        "debt_to_assets": 0.10813528524763596,
+        "interest_coverage": 20.31783699669325,
+        "revenue_growth": -0.019930132568971696,
+        "earnings_growth": -0.09100511264677791,
+        "book_value_growth": 0.007858410023284178,
+        "earnings_per_share_growth": -0.09752368473353226,
+        "free_cash_flow_growth": 0.03865358126721763,
+        "operating_income_growth": -0.09178332318928789,
+        "ebitda_growth": -0.0817972079928049,
+        "payout_ratio": 0.0,
+        "earnings_per_share": 60.433386569039016,
+        "book_value_per_share": 303.392,
+        "free_cash_flow_per_share": 5.593
+      }
+    },
+    "consistency_analysis": {
+      "score": 0,
+      "details": "Inconsistent earnings growth pattern; Total earnings growth of 455.4% over past 10 periods"
+    },
+    "moat_analysis": {
+      "score": 1,
+      "max_score": 3,
+      "details": "ROE not consistently above 15%; Stable operating margins above 15% (moat indicator)"
+    },
+    "management_analysis": {
+      "score": 1,
+      "max_score": 2,
+      "details": "Company has been repurchasing shares (shareholder-friendly); No significant new stock issuance detected; No or minimal dividends paid"
+    },
+    "intrinsic_value_analysis": {
+      "intrinsic_value": 1776005734053.711,
+      "owner_earnings": 107996000000.0,
+      "assumptions": {
+        "growth_rate": 0.05,
+        "discount_rate": 0.09,
+        "terminal_multiple": 12,
+        "projection_years": 10
+      },
+      "details": [
+        "Intrinsic value calculated using DCF model with owner earnings"
+      ]
+    },
+    "market_cap": 1148869211402.0,
+    "margin_of_safety": 0.545872860398441
+  }
+}
+
+                Return the trading signal in the following JSON format exactly:
+                {
+                  "signal": "bullish" | "bearish" | "neutral",
+                  "confidence": float between 0 and 100,
+                  "reasoning": "string"
+                }
+                
+--- Pydantic Model Expected: WarrenBuffettSignal ---
+--- END PROMPT for Agent: warren_buffett_agent ---
+
+--- PROMPT for Agent: portfolio_manager at 2025-05-24 23:23:56 (Model: o3, Provider: OpenAI) ---
+System: You are a portfolio manager making final trading decisions based on multiple tickers.
+
+              Trading Rules:
+              - For long positions:
+                * Only buy if you have available cash
+                * Only sell if you currently hold long shares of that ticker
+                * Sell quantity must be ≤ current long position shares
+                * Buy quantity must be ≤ max_shares for that ticker
+              
+              - For short positions:
+                * Only short if you have available margin (position value × margin requirement)
+                * Only cover if you currently have short shares of that ticker
+                * Cover quantity must be ≤ current short position shares
+                * Short quantity must respect margin requirements
+              
+              - The max_shares values are pre-calculated to respect position limits
+              - Consider both long and short opportunities based on signals
+              - Maintain appropriate risk management with both long and short exposure
+
+              Available Actions:
+              - "buy": Open or add to long position
+              - "sell": Close or reduce long position
+              - "short": Open or add to short position
+              - "cover": Close or reduce short position
+              - "hold": No action
+
+              Inputs:
+              - signals_by_ticker: dictionary of ticker → signals
+              - max_shares: maximum shares allowed per ticker
+              - portfolio_cash: current cash in portfolio
+              - portfolio_positions: current positions (both long and short)
+              - current_prices: current prices for each ticker
+              - margin_requirement: current margin requirement for short positions (e.g., 0.5 means 50%)
+              - total_margin_used: total margin currently in use
+              
+Human: Based on the team's analysis, make your trading decisions for each ticker.
+
+              Here are the signals by ticker:
+              {
+  "BRK.B": {
+    "warren_buffett_agent": {
+      "signal": "neutral",
+      "confidence": 0.0
+    }
+  }
+}
+
+              Current Prices:
+              {
+  "BRK.B": 503.46
+}
+
+              Maximum Shares Allowed For Purchases:
+              {
+  "BRK.B": 39
+}
+
+              Portfolio Cash: 100000.00
+              Current Positions: {
+  "BRK.B": {
+    "long": 0,
+    "short": 0,
+    "long_cost_basis": 0.0,
+    "short_cost_basis": 0.0,
+    "short_margin_used": 0.0
+  }
+}
+              Current Margin Requirement: 0.00
+              Total Margin Used: 0.00
+
+              Output strictly in JSON with the following structure:
+              {
+                "decisions": {
+                  "TICKER1": {
+                    "action": "buy/sell/short/cover/hold",
+                    "quantity": integer,
+                    "confidence": float between 0 and 100,
+                    "reasoning": "string"
+                  },
+                  "TICKER2": {
+                    ...
+                  },
+                  ...
+                }
+              }
+              
+--- Pydantic Model Expected: PortfolioManagerOutput ---
+--- END PROMPT for Agent: portfolio_manager ---
+

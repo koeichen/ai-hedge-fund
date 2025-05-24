@@ -232,6 +232,7 @@ run.bat --ticker AAPL,MSFT,NVDA --ollama backtest
 ```
 
 
+
 ## Project Structure 
 ```
 ai-hedge-fund/
@@ -256,6 +257,114 @@ ai-hedge-fund/
 ├── pyproject.toml
 ├── ...
 ```
+
+## Prompt Templates
+
+### English
+
+Below are the prompt templates and their variable placeholders:
+
+- **Template 1: warren_buffett_agent**  
+  - **System**: Fixed role description for a Warren Buffett AI agent.  
+  - **Human**:  
+    ```  
+    Based on the following data, create the investment signal as Warren Buffett would:
+
+    Analysis Data for {{TICKER}}:
+    {{ANALYSIS_JSON}}
+
+    Return the trading signal in the following JSON format exactly:
+    {
+      "signal": "bullish" | "bearish" | "neutral",
+      "confidence": float between 0 and 100,
+      "reasoning": "string"
+    }
+    ```  
+  - **Variables**:  
+    - `{{TICKER}}`: stock ticker symbol  
+    - `{{ANALYSIS_JSON}}`: JSON object with financial metrics and scores  
+
+- **Template 2: portfolio_manager**  
+  - **System**: Fixed role description for a portfolio manager agent.  
+  - **Human**:  
+    ```  
+    Based on the team's analysis, make your trading decisions for each ticker.
+
+    Here are the signals by ticker:
+    {{SIGNALS_JSON}}
+
+    Current Prices:
+    {{PRICES_JSON}}
+
+    Maximum Shares Allowed For Purchases:
+    {{MAX_SHARES_JSON}}
+
+    Portfolio Cash: {{CASH}}
+    Current Positions: {{POSITIONS_JSON}}
+    Current Margin Requirement: {{MARGIN_REQ}}
+    Total Margin Used: {{MARGIN_USED}}
+
+    Output strictly in JSON with the following structure:
+    {
+      "decisions": { … }
+    }
+    ```  
+  - **Variables**:  
+    - `{{SIGNALS_JSON}}`, `{{PRICES_JSON}}`, `{{MAX_SHARES_JSON}}`  
+    - `{{CASH}}`, `{{POSITIONS_JSON}}`, `{{MARGIN_REQ}}`, `{{MARGIN_USED}}`
+
+### 提示模板（中文）
+
+以下是提示模板及其变量位置说明：
+
+- **模板 1：warren_buffett_agent**  
+  - **System**：固定的角色描述，定位为 Warren Buffett AI 代理。  
+  - **Human**：  
+    ```  
+    根据以下数据，按 Warren Buffett 的方式生成投资信号：
+
+    分析数据 - {{TICKER}}:
+    {{ANALYSIS_JSON}}
+
+    严格按照以下 JSON 格式返回信号：
+    {
+      "signal": "bullish" | "bearish" | "neutral",
+      "confidence": 0 到 100 之间的浮点数,
+      "reasoning": "原因说明"
+    }
+    ```  
+  - **变量**：  
+    - `{{TICKER}}`：股票代码  
+    - `{{ANALYSIS_JSON}}`：包含财务指标和评分的 JSON 对象  
+
+- **模板 2：portfolio_manager**  
+  - **System**：固定的角色描述，定位为投资组合管理代理。  
+  - **Human**：  
+    ```  
+    根据团队的分析，为每个股票做出交易决策。
+
+    各股票信号：
+    {{SIGNALS_JSON}}
+
+    当前价格：
+    {{PRICES_JSON}}
+
+    可买入最大股数：
+    {{MAX_SHARES_JSON}}
+
+    账户现金：{{CASH}}
+    当前持仓：{{POSITIONS_JSON}}
+    保证金要求：{{MARGIN_REQ}}
+    已使用保证金：{{MARGIN_USED}}
+
+    严格输出以下结构的 JSON：
+    {
+      "decisions": { … }
+    }
+    ```  
+  - **变量**：  
+    - `{{SIGNALS_JSON}}`、`{{PRICES_JSON}}`、`{{MAX_SHARES_JSON}}`  
+    - `{{CASH}}`、`{{POSITIONS_JSON}}`、`{{MARGIN_REQ}}`、`{{MARGIN_USED}}`
 
 ## Contributing
 

@@ -439,7 +439,6 @@ def generate_buffett_output(
     prompt_text = str(prompt)
     formatted_prompt = prompt_text.replace("\\n", "\n")
     print(f"[warren_buffett_agent] Prompt for {ticker}:\n{formatted_prompt}\nEND")
-
     # Default fallback signal in case parsing fails
     def create_default_warren_buffett_signal():
         return WarrenBuffettSignal(signal="neutral", confidence=0.0, reasoning="Error in analysis, defaulting to neutral")
@@ -452,4 +451,5 @@ def generate_buffett_output(
         pydantic_model=WarrenBuffettSignal,
         agent_name="warren_buffett_agent",
         default_factory=create_default_warren_buffett_signal,
+        max_retries=1
     )
