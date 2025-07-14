@@ -136,16 +136,26 @@ def _hack_llm_call(prompt: any, pydantic_model: type[BaseModel], agent_name: str
         console_output.append(prompt_title)
         file_content.append(prompt_title)
         
+        # Combine all messages into one content
+        combined_content = ""
         for i, message in enumerate(prompt.messages):
-            message_header = f"  Message {i+1} ({message.type}):"
-            console_output.append(message_header)
-            file_content.append(message_header)
-            
-            message_content = f"    {message.content}"
-            console_output.append(message_content)
-            file_content.append(message_content)
-            console_output.append("")
-            file_content.append("")
+            if hasattr(message, 'content') and message.content:
+                if combined_content:
+                    combined_content += " "  # Add space between messages
+                combined_content += message.content.strip()
+        
+        # Display combined content
+        console_output.append("  Combined Content:")
+        file_content.append("  Combined Content:")
+        
+        content_lines = combined_content.split('\n')
+        for line in content_lines:
+            formatted_line = f"    {line}"
+            console_output.append(formatted_line)
+            file_content.append(formatted_line)
+        
+        console_output.append("")
+        file_content.append("")
             
     elif hasattr(prompt, "content"):
         prompt_title = "PROMPT CONTENT:"
